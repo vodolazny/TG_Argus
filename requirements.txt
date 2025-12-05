@@ -1,0 +1,18 @@
+# Основные библиотеки бота
+Telethon==1.42.0
+python-dotenv==1.2.1
+requests==2.32.5
+
+# Нейросети и NLP
+spacy==3.8.11
+vosk==0.3.45
+pandas==2.3.3
+
+# Для поиска фишинга 
+Levenshtein==0.27.3
+
+# ВирусТотал
+vt-py==0.22.0
+
+# Модель Spacy 
+ru_core_news_lg @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_lg-3.8.0/ru_core_news_lg-3.8.0-py3-none-any.whl

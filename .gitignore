@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.env
+bot.session
+bot.session-journal
+vosk_model/
+nlp_model/
