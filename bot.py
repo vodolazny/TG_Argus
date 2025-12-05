@@ -17,11 +17,8 @@ API_HASH = os.getenv("API_HASH")
 client = TelegramClient('bot', API_ID , API_HASH)
 
 nlp = spacy.load("nlp_model")
-
 vosk_model = Model('vosk_model')
-
 scammers = {}
-
 
 @client.on(events.NewMessage(incoming=True))
 async def handler(event):

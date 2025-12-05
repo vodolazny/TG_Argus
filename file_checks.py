@@ -8,7 +8,6 @@ load_dotenv()
 VIRUSTOTAL_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
 vt_client = vt.Client(VIRUSTOTAL_API_KEY)
 
-
 async def get_file_risk_score(filename, mime_type):
     """
     Возвращает оценку риска файла:

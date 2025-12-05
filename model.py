@@ -9,7 +9,6 @@ CSV_FILE = "dataset.csv"
 MODEL_NAME = "ru_core_news_lg"
 OUTPUT_DIR = "nlp_model"
 
-
 def load_data_from_csv(filename):
     """Читает CSV и превращает его в формат для spaCy"""
     df = pd.read_csv(filename)

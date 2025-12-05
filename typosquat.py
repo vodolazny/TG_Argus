@@ -17,6 +17,7 @@ PROTECTED_DOMAINS = [
     "github.com"
 ]
 
+
 def check_typosquatting(text):
     """
     Возвращает (True, оригинал), если найдена подделка.
@@ -41,10 +42,9 @@ def check_typosquatting(text):
             if clean_domain == real_brand:
                 continue 
             
-            # СЧИТАЕМ РАССТОЯНИЕ
             dist = Levenshtein.distance(clean_domain, real_brand)
             
-            # --- ЛОГИКА ДЕТЕКЦИИ ---
+            
             # Если отличие всего в 1 или 2 символах...
             # ИЛИ если домен содержит имя бренда (например sberbank-support.ru)
             if dist > 0 and dist <= 2:
@@ -52,7 +52,6 @@ def check_typosquatting(text):
                 return True, real_brand
             
             # Доп. проверка: если бренд входит в название домена, но это не сам бренд
-            # Пример: sberbank-bonus.ru (тут Levenshtein будет большим, но это все равно фишинг)
             if real_brand.split('.')[0] in clean_domain and clean_domain != real_brand:
                  print(f"⚠️ Найден фишинг по вхождению: {clean_domain}")
                  return True, real_brand
